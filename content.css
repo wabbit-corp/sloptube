@@ -1,0 +1,168 @@
+/* SlopTube - AI Voice Detector Styles */
+
+#sloptube-indicator {
+    position: relative;
+    margin: 12px 0;
+    padding: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', 'Arial', sans-serif;
+    color: white;
+    max-width: 400px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sloptube-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sloptube-icon {
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sloptube-status {
+    flex-grow: 1;
+}
+
+.sloptube-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    opacity: 0.9;
+}
+
+.sloptube-result {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.sloptube-result.sloptube-ai-detected {
+    color: #ff6b6b;
+    text-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
+}
+
+.sloptube-result.sloptube-ai-possible {
+    color: #ffd93d;
+    text-shadow: 0 0 8px rgba(255, 217, 61, 0.5);
+}
+
+.sloptube-result.sloptube-human-detected {
+    color: #6bcf7f;
+    text-shadow: 0 0 8px rgba(107, 207, 127, 0.5);
+}
+
+.sloptube-confidence {
+    font-size: 12px;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+/* Pulse animation for active analysis */
+#sloptube-indicator::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.05);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #sloptube-indicator {
+        margin: 8px;
+        padding: 12px;
+        max-width: none;
+    }
+    
+    .sloptube-container {
+        gap: 8px;
+    }
+    
+    .sloptube-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .sloptube-title {
+        font-size: 12px;
+    }
+    
+    .sloptube-result {
+        font-size: 14px;
+    }
+    
+    .sloptube-confidence {
+        font-size: 10px;
+    }
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+    #sloptube-indicator {
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    #sloptube-indicator {
+        background: #000;
+        border: 2px solid #fff;
+        color: #fff;
+    }
+    
+    .sloptube-result.sloptube-ai-detected {
+        color: #ff0000;
+    }
+    
+    .sloptube-result.sloptube-human-detected {
+        color: #00ff00;
+    }
+    
+    .sloptube-result.sloptube-ai-possible {
+        color: #ffff00;
+    }
+}
