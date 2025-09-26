@@ -1,0 +1,272 @@
+/* SlopTube Popup Styles */
+body {
+    width: 350px;
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.popup-container {
+    padding: 20px;
+    background: white;
+    min-height: 460px;
+    border-radius: 8px;
+    margin: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.logo {
+    font-size: 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.title p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.current-status {
+    margin-bottom: 20px;
+}
+
+.status-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    border-left: 4px solid #667eea;
+}
+
+.status-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.status-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.result-text.ai-detected {
+    color: #dc3545;
+}
+
+.result-text.human-detected {
+    color: #28a745;
+}
+
+.result-text.ai-possible {
+    color: #ffc107;
+}
+
+.result-confidence {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.history-section {
+    margin-bottom: 20px;
+}
+
+.history-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.history-list {
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.history-item:hover {
+    background: #e9ecef;
+}
+
+.history-url {
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    flex-grow: 1;
+    margin-right: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-result {
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.history-result.ai {
+    color: #dc3545;
+}
+
+.history-result.human {
+    color: #28a745;
+}
+
+.history-result.possible {
+    color: #ffc107;
+}
+
+.no-history {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.settings-section {
+    margin-bottom: 20px;
+}
+
+.settings-section h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.setting-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.setting-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.setting-item input[type="range"] {
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.threshold-value {
+    font-weight: 600;
+    color: #667eea;
+    min-width: 35px;
+    text-align: right;
+}
+
+.setting-item input[type="checkbox"] {
+    margin: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+}
+
+.version {
+    color: #999;
+    font-weight: 500;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.links a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Scrollbar styling */
+.history-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 2px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: #5a6fd8;
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
